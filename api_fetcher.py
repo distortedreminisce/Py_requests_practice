@@ -38,6 +38,7 @@ while True:
 	elif choice == 2:
 		print("User details:")
 		print("-"*11)
+		user_id = int(input("Input user Id: "))
 		user = next((u for u in users if u["id"] == user_id), None)
 		if user:
     		print(f"Name: user['name']")
@@ -45,6 +46,9 @@ while True:
 			print(f"Email: user['email']")
 		else:
     		print("User not found")
+
+	elif choice == 3:
+		post_data = response.fetch(
 
 	else:
 		print("Thanks for using reminisce's api fetcher")
