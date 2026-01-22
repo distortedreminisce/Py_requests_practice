@@ -28,24 +28,11 @@ while True:
 	menu()
 	if choice == 1:
 		print("All users:")
-		print("-"*11)
-		user = next((u for u in users if u["id"] == user_id), None)
-		if user:
-    		print(f"Name: user['name']")
-		else:
-			print("User not found")
+		
 
 	elif choice == 2:
 		print("User details:")
-		print("-"*11)
-		user_id = int(input("Input user Id: "))
-		user = next((u for u in users if u["id"] == user_id), None)
-		if user:
-    		print(f"Name: user['name']")
-			print(f"Username: user['username']")
-			print(f"Email: user['email']")
-		else:
-    		print("User not found")
+		
 
 	elif choice == 3:
 		post_data = response.fetch(
