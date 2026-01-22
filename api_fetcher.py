@@ -9,7 +9,8 @@ def menu():
 	print("4. Exit")
 	choice = int(input("Input your choice: "))
 
-response = requests("
+response = requests("https://jsonplaceholder.typicode.com/users")
+content = response.content
 print("Welcome to reminisce's ali fetcher!")
 menu()
 
