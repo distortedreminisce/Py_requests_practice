@@ -9,11 +9,32 @@ def menu():
 	print("4. Exit")
 	choice = int(input("Input your choice: "))
 
-response = requests.get("https://jsonplaceholder.typicode.com/users", timeout=5)
-post_data = response.json()
-print("Welcome to reminisce's ali fetcher!")
+
+print("Welcome to reminisce's api fetcher!")
 menu()
+try:
+    response = requests.get("https://jsonplaceholder.typicode.com/users", timeout=5)
+    response.raise_for_status()
+    data = response.json()
+except requests.exceptions.Timeout:
+    print("Request timed out. Please try again.")
+except requests.exceptions.ConnectionError:
+    print("Connection error. Check your internet.")
+except requests.exceptions.HTTPError as e:
+    print(f"HTTP error: {e}")
+except requests.exceptions.RequestException as e:
+    print(f"Request failed: {e}")
 
 if choice == 1:
+
+elif choice == 2:
+	user = next((u for u in users if u["id"] == user_id), None)
+	if user:
+    	print(f"Name: user['name']")
+		print(f"Username: user['username']")
+		print(f"Email: user['email']")
+	else:
+    	print("User not found")
+	
 	
 
