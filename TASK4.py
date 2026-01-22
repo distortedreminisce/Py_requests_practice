@@ -6,7 +6,7 @@ try:
 	post_data = response.json()
 	print(post_data["title"])
 	print(post_data["body"])
-	print(post_data["userId"]
+	print(post_data["userId"])
 except requests.exceptions.RequestException as e:
     print(f"Failed to create post: {e}")
 
