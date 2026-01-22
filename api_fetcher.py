@@ -9,6 +9,10 @@ def menu():
 	print("4. Exit")
 	choice = int(input("Input your choice: "))
 
+def fetch_users():
+	user = next((u for u in users if u["id"] == user_id), None)
+	if user:
+
 
 print("Welcome to reminisce's api fetcher!")
 try:
