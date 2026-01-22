@@ -10,8 +10,8 @@ def menu():
 	choice = int(input("Input your choice: "))
 
 def fetch_users():
-	user = next((u for u in users if u["id"] == user_id), None)
-	if user:
+	for u in enumerate(users): 
+		print(f"Name: u['name'], Id: u['Id']")
 
 
 print("Welcome to reminisce's api fetcher!")
@@ -39,7 +39,6 @@ while True:
 		
 
 	elif choice == 3:
-		post_data = response.fetch(
 
 	else:
 		print("Thanks for using reminisce's api fetcher")
