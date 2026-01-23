@@ -49,7 +49,12 @@ def display_user_posts():
 	print("Posts by {user['name']}:")
 	for index, post in enumerate(user_posts):
 		print(f"{index}. {post['title'][:30]}...")
-	
+	view = int(input("View full post? (enter 0 for no, 1 for yes)"))
+	if view == 0:
+		menu()
+	else:
+		print(f"Title: {post['title']}")
+		print(f"Body: {post['title']}")
 	
 #start
 print("Welcome to reminisce's api fetcher!")
@@ -78,7 +83,8 @@ while True:
 
 	elif choice == 3:
 		id_choice = int(input("Enter user id: "))
-		display_user_posts(id_choice)
+		fetch_user_posts(id_choice)
+		display_user_posts()
 		
 	else:
 		print("Thanks for using reminisce's api fetcher")
