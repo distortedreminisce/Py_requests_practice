@@ -54,7 +54,7 @@ def display_user_posts():
 		menu()
 	else:
 		print(f"Title: {post['title']}")
-		print(f"Body: {post['title']}")
+		print(f"Body: {post['body'][:50]}")
 	
 #start
 print("Welcome to reminisce's api fetcher!")
