@@ -26,6 +26,9 @@ def fetch_user_details(id_choice):
 			print(f"['address']['street']")
 			print(f"['address']['suite']")
 			print(f"['address']['city']")
+
+def fetch_user_posts(id_choice):
+	
 	
 #start
 print("Welcome to reminisce's api fetcher!")
@@ -53,6 +56,7 @@ while True:
 		
 
 	elif choice == 3:
+		id_choice = int(input("Enter user Id: "))
 
 	else:
 		print("Thanks for using reminisce's api fetcher")
