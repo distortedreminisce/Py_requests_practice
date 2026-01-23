@@ -29,9 +29,9 @@ def display_user_details(id_choice):
 			print(f"  City: {user['address']['city']}")
 			print(f"  Zipcode: {user['address']['zipcode']}")
 
-def fetch_user_posts():
+def fetch_user_posts(id_choice):
 	try:
-    	post_response = requests.get("https://jsonplaceholder.typicode.com/posts?userId={id}", timeout=5)
+    	post_response = requests.get(f"https://jsonplaceholder.typicode.com/posts?userId={id_choice}", timeout=5)
     	post_response.raise_for_status()
     	user_posts = post_response.json()
 	except requests.exceptions.Timeout:
@@ -46,12 +46,9 @@ def fetch_user_posts():
 def display_user_posts():
 	print("User posts")
 	print("-"*11)
-	for user in users:
-		if id_choice in user: 
-			print("Posts by {user['name']}:")
-			
-	
-	
+	print("Posts by {user['name']}:")
+	for index, post in enumerate(user_posts):
+		print(f"{index}. {post['title'][:30]}...")
 	
 	
 #start
